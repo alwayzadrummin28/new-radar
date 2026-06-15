@@ -164,43 +164,16 @@
     <!-- BOTTOM ROW -->
     <div class="bottom-row">
 
-        <!-- LEFT BOTTOM (blank for now) -->
-        <div class="blank"></div>
-
-        <!-- MIDDLE BOTTOM — FORECAST -->
+        <!-- LEFT BOTTOM — WIND -->
         <div class="blank">
-            <div class="bottom-title">FORECAST</div>
+            <div class="bottom-title">WIND</div>
 
-            <a class="weatherwidget-io" 
-               href="https://forecast7.com/en/37d94n90d79/potosi/?unit=us" 
-               data-label_1="POTOSI" 
-               data-label_2="WEATHER" 
-               data-font="Verdana" 
-               data-icons="Climacons Animated" 
-               data-theme="original">
-               POTOSI WEATHER
-            </a>
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=37.527&lon=-91.736&detailLat=37.96260604160774&detailLon=-90.79238891601564&marker=true&pressure=true&message=true"
+                frameborder="0"
+                style="border: none; margin-top: 28px;"
+            ></iframe>
         </div>
 
-        <!-- RIGHT BOTTOM (blank for now) -->
-        <div class="blank"></div>
-
-    </div>
-
-</div>
-
-<!-- WEATHER WIDGET SCRIPT -->
-<script>
-!function(d,s,id){
-    var js,fjs=d.getElementsByTagName(s)[0];
-    if(!d.getElementById(id)){
-        js=d.createElement(s);
-        js.id=id;
-        js.src='https://weatherwidget.io/js/widget.min.js';
-        fjs.parentNode.insertBefore(js,fjs);
-    }
-}(document,'script','weatherwidget-io-js');
-</script>
-
-</body>
-</html>
