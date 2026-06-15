@@ -83,6 +83,19 @@
         border: 2px solid #ff0099;
         box-shadow: 0 0 25px #ff009966;
         border-radius: 6px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bottom-title {
+        position: absolute;
+        top: 8px;
+        left: 12px;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        color: #ff0099;
+        opacity: 0.9;
+        z-index: 10;
     }
 </style>
 </head>
@@ -150,12 +163,44 @@
 
     <!-- BOTTOM ROW -->
     <div class="bottom-row">
+
+        <!-- LEFT BOTTOM (blank for now) -->
         <div class="blank"></div>
+
+        <!-- MIDDLE BOTTOM — FORECAST -->
+        <div class="blank">
+            <div class="bottom-title">FORECAST</div>
+
+            <a class="weatherwidget-io" 
+               href="https://forecast7.com/en/37d94n90d79/potosi/?unit=us" 
+               data-label_1="POTOSI" 
+               data-label_2="WEATHER" 
+               data-font="Verdana" 
+               data-icons="Climacons Animated" 
+               data-theme="original">
+               POTOSI WEATHER
+            </a>
+        </div>
+
+        <!-- RIGHT BOTTOM (blank for now) -->
         <div class="blank"></div>
-        <div class="blank"></div>
+
     </div>
 
 </div>
+
+<!-- WEATHER WIDGET SCRIPT -->
+<script>
+!function(d,s,id){
+    var js,fjs=d.getElementsByTagName(s)[0];
+    if(!d.getElementById(id)){
+        js=d.createElement(s);
+        js.id=id;
+        js.src='https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js,fjs);
+    }
+}(document,'script','weatherwidget-io-js');
+</script>
 
 </body>
 </html>
