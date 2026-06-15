@@ -97,6 +97,32 @@
         opacity: 0.9;
         z-index: 10;
     }
+
+    /* Logo styling */
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background: radial-gradient(circle at center, #000 60%, #001a33 100%);
+    }
+
+    .logo-container img {
+        max-width: 80%;
+        height: auto;
+        filter: drop-shadow(0 0 20px #00eaff);
+    }
+
+    .logo-header {
+        position: absolute;
+        top: 8px;
+        left: 12px;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        color: #00eaff;
+        opacity: 0.9;
+        z-index: 10;
+    }
 </style>
 </head>
 <body>
@@ -106,7 +132,6 @@
     <!-- TOP: LIVE RADAR -->
     <div class="radar">
         <div class="radar-title">LIVE RADAR</div>
-
         <iframe 
             src="https://www.rainviewer.com/map.html?loc=37.545,-92.8649,5&oC=true&oCS=1&oF=1&oAP=1&c=9&o=83&lm=1&layer=radar&sm=1&sn=1&ts=2"
             width="100%"
@@ -123,11 +148,10 @@
         <!-- LEFT PANEL — FIRE SPREAD -->
         <div class="panel">
             <div class="panel-title">FIRE SPREAD</div>
-
             <iframe 
                 width="100%" 
                 height="100%" 
-                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=fwi&product=fireDanger&level=surface&lat=37.666&lon=-92.483&detailLat=37.9051994823157&detailLon=-90.84869384765625&marker=true"
+                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=fwi&product=fireDanger&level=surface&lat=37.666&lon=-92.483"
                 frameborder="0"
                 style="border: none; margin-top: 28px;">
             </iframe>
@@ -136,11 +160,10 @@
         <!-- CENTER PANEL — CLOUD COVERAGE -->
         <div class="panel">
             <div class="panel-title">CLOUD COVERAGE</div>
-
             <iframe 
                 width="100%" 
                 height="100%" 
-                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=satellite&product=satellite&level=surface&lat=37.666&lon=-92.483&detailLat=37.9051994823157&detailLon=-90.84869384765625&marker=true&pressure=true&message=true"
+                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=satellite&product=satellite&level=surface&lat=37.666&lon=-92.483"
                 frameborder="0"
                 style="border: none; margin-top: 28px;">
             </iframe>
@@ -149,11 +172,10 @@
         <!-- RIGHT PANEL — FUEL MOISTURE -->
         <div class="panel">
             <div class="panel-title">FUEL MOISTURE</div>
-
             <iframe 
                 width="100%" 
                 height="100%" 
-                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=dfm10h&product=fireDanger&level=surface&lat=37.666&lon=-92.483&detailLat=37.9051994823157&detailLon=-90.84869384765625&marker=true"
+                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=dfm10h&product=fireDanger&level=surface&lat=37.666&lon=-92.483"
                 frameborder="0"
                 style="border: none; margin-top: 28px;">
             </iframe>
@@ -167,11 +189,10 @@
         <!-- LEFT BOTTOM — WIND -->
         <div class="blank">
             <div class="bottom-title">WIND</div>
-
             <iframe 
                 width="100%" 
                 height="100%" 
-                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=37.527&lon=-91.736&detailLat=37.96260604160774&detailLon=-90.79238891601564&marker=true&pressure=true&message=true"
+                src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=in&metricTemp=°F&metricWind=mph&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=37.527&lon=-91.736"
                 frameborder="0"
                 style="border: none; margin-top: 28px;">
             </iframe>
@@ -180,7 +201,6 @@
         <!-- MIDDLE BOTTOM — FORECAST -->
         <div class="blank">
             <div class="bottom-title">FORECAST</div>
-
             <a class="weatherwidget-io" 
                href="https://forecast7.com/en/37d94n90d79/potosi/?unit=us" 
                data-label_1="POTOSI" 
@@ -192,23 +212,19 @@
             </a>
         </div>
 
-        <!-- RIGHT BOTTOM — MISSOURI ALERTS -->
+        <!-- RIGHT BOTTOM — POTOSI FIRE OPS CENTER LOGO -->
         <div class="blank">
-            <div class="bottom-title">MISSOURI ALERTS</div>
-
-            <iframe 
-                src="https://feed.mikle.com/widget/v2/187840/?preloader-text=Loading+Missouri+Alerts..."
-                width="100%" 
-                height="100%" 
-                style="border: none; margin-top: 28px; overflow: hidden;">
-            </iframe>
+            <div class="logo-header">POTOSI FIRE OPS CENTER</div>
+            <div class="logo-container">
+                <img src="YOUR_LOGO_IMAGE_PATH_HERE" alt="Potosi Fire Ops Center Logo">
+            </div>
         </div>
 
     </div>
 
 </div>
 
-<!-- WEATHER WIDGET SCRIPT — MUST BE LAST -->
+<!-- WEATHER WIDGET SCRIPT -->
 <script>
 !function(d,s,id){
     var js,fjs=d.getElementsByTagName(s)[0];
