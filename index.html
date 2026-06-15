@@ -2,105 +2,106 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fire Ops Dashboard</title>
-
+<title>Tactical Ops Dashboard</title>
 <style>
     body {
         margin: 0;
         background: #0a0a0f;
-        font-family: 'Segoe UI', sans-serif;
-        color: #e0e0e0;
+        font-family: 'Orbitron', sans-serif;
+        color: #00eaff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
-    /* GRID LAYOUT */
-    .grid {
+    .dashboard {
+        width: 95vw;
+        height: 95vh;
         display: grid;
-        grid-template-rows: 260px 200px 200px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1.2fr 1fr 1fr;
         gap: 12px;
-        padding: 12px;
     }
 
-    /* TOP BAR (Radar) spans all 3 columns */
-    .top-bar {
-        grid-column: 1 / 4;
+    /* TOP — LIVE RADAR */
+    .radar {
         background: #11131a;
         border: 2px solid #00eaff;
-        border-radius: 10px;
-        box-shadow: 0 0 25px #00eaff88;
-        padding: 10px;
+        box-shadow: 0 0 25px #00eaff55;
+        border-radius: 6px;
     }
 
-    /* Middle + Bottom tiles */
-    .tile {
+    /* MIDDLE ROW */
+    .middle-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+    }
+
+    .panel {
         background: #11131a;
-        border: 2px solid #ff009d;
-        border-radius: 10px;
-        box-shadow: 0 0 20px #ff009d66;
-        padding: 10px;
+        border: 2px solid #00ff88;
+        box-shadow: 0 0 20px #00ff8855;
+        border-radius: 6px;
+        position: relative;
     }
 
-    /* Headers inside tiles */
-    .tile h2 {
-        margin-top: 0;
-        color: #00eaff;
-        text-shadow: 0 0 10px #00eaff;
-        font-size: 1.2rem;
+    .panel-title {
+        position: absolute;
+        top: 6px;
+        left: 10px;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        color: #00ff88;
+        opacity: 0.85;
     }
 
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        border-radius: 8px;
+    /* BOTTOM ROW */
+    .bottom-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+    }
+
+    .blank {
+        background: #11131a;
+        border: 2px solid #ff0099;
+        box-shadow: 0 0 20px #ff009955;
+        border-radius: 6px;
     }
 </style>
 </head>
-
 <body>
 
-<div class="grid">
+<div class="dashboard">
 
-    <!-- TOP BAR — RADAR -->
-    <div class="top-bar">
-        <h2>Live Radar</h2>
-        <iframe src="YOUR_RADAR_IFRAME_HERE"></iframe>
+    <!-- TOP: LIVE RADAR -->
+    <div class="radar"></div>
+
+    <!-- MIDDLE ROW -->
+    <div class="middle-row">
+        <div class="panel">
+            <div class="panel-title">FIRE SPREAD</div>
+        </div>
+
+        <div class="panel">
+            <!-- intentionally blank -->
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">FUEL MOISTURE</div>
+        </div>
     </div>
 
-    <!-- MIDDLE 3 TILES -->
-    <div class="tile">
-        <h2>Fuel Load</h2>
-        <iframe src="YOUR_IFRAME_OR_DATA_WIDGET"></iframe>
-    </div>
-
-    <div class="tile">
-        <h2>Moisture</h2>
-        <iframe src="YOUR_IFRAME_OR_DATA_WIDGET"></iframe>
-    </div>
-
-    <div class="tile">
-        <h2>Wind / Spread</h2>
-        <iframe src="YOUR_IFRAME_OR_DATA_WIDGET"></iframe>
-    </div>
-
-    <!-- BOTTOM 3 TILES -->
-    <div class="tile">
-        <h2>ABC Index</h2>
-        <iframe src="YOUR_IFRAME_OR_DATA_WIDGET"></iframe>
-    </div>
-
-    <div class="tile">
-        <h2>Fire Danger</h2>
-        <iframe src="YOUR_IFRAME_OR_DATA_WIDGET"></iframe>
-    </div>
-
-    <div class="tile">
-        <h2>Other Metrics</h2>
-        <iframe src="YOUR_IFRAME_OR_DATA_WIDGET"></iframe>
+    <!-- BOTTOM ROW -->
+    <div class="bottom-row">
+        <div class="blank"></div>
+        <div class="blank"></div>
+        <div class="blank"></div>
     </div>
 
 </div>
 
 </body>
 </html>
+
